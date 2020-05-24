@@ -58,12 +58,16 @@ public class CameraZoom : MonoBehaviour
                 //toggles between the regular and zommed values;
                 _isZoomIn = !_isZoomIn;
             }
-
-            // 
-            _cam.orthographicSize = Mathf.Lerp(_cam.orthographicSize, _targetZoom, Time.deltaTime * zoomLerpSpeed);
-            _cam.transform.position = Vector3.Lerp(_cam.transform.position, _targetPosition, Time.deltaTime * zoomLerpSpeed);
-           
         }
+        else
+        {
+            _targetZoom = _regularSize;    
+            _targetPosition = _regularPosition;
+        }
+
+        _cam.orthographicSize = Mathf.Lerp(_cam.orthographicSize, _targetZoom, Time.deltaTime * zoomLerpSpeed);
+        _cam.transform.position = Vector3.Lerp(_cam.transform.position, _targetPosition, Time.deltaTime * zoomLerpSpeed);
+           
     }
 
     public void EnableZoom(bool status)
