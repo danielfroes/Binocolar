@@ -83,8 +83,10 @@ public class CameraZoom : MonoBehaviour
         List<RaycastResult> raycastResultList = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerEventData, raycastResultList);
         
-    
 
+
+        //The background images isn't raycast targets,
+        // so if theres a element in the list means that it is UI, so return false
         return raycastResultList.Count == 0;
     }
     
