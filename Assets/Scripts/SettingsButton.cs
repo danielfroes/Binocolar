@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class SettingsButton : MonoBehaviour
 {
-    private void Awake() 
-    {
-        Screen.fullScreenMode = FullScreenMode.Windowed;
-    }
+   
 
     public void SetFullscreen(bool status){
         if(status)
